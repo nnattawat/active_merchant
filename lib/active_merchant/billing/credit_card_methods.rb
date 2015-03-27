@@ -180,10 +180,10 @@ module ActiveMerchant #:nodoc:
           numbers.reverse.bytes.each do |number|
             if odd
               odd = false
-              sum += ODD_LUHN_VALUE[number]
+              sum += ODD_LUHN_VALUE[number] || 0
             else
               odd = true
-              sum += EVEN_LUHN_VALUE[number]
+              sum += EVEN_LUHN_VALUE[number] || 0
             end
           end
 
